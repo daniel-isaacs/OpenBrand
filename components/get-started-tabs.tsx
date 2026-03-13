@@ -38,9 +38,6 @@ export function GetStartedTabs({ isLoggedIn = false }: { isLoggedIn?: boolean })
 function ApiKeyContent({ isLoggedIn }: { isLoggedIn: boolean }) {
   return (
     <div>
-      <p className="text-neutral-500 mb-3 text-sm">
-        Use the hosted API with your API key for programmatic access.
-      </p>
       <a
         href={isLoggedIn ? "/dashboard" : "/login"}
         className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-neutral-900 text-white text-sm font-medium hover:bg-neutral-800 transition-colors"
