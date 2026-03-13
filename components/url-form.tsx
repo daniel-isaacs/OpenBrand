@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { BrandExtractionResult, ExtractionResponse } from "@/lib/types";
+import type { BrandExtractionResult, ExtractionResponse } from "@/src/types";
 import { BrandResults } from "./brand-results";
 
 export function UrlForm() {

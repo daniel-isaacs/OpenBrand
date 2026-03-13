@@ -1,4 +1,4 @@
-import type { BrandExtractionResult } from "@/lib/types";
+import type { BrandExtractionResult } from "@/src/types";
 import { ColorPalette } from "./color-palette";
 import { LogoDisplay } from "./logo-display";
 import { BackdropGallery } from "./backdrop-gallery";

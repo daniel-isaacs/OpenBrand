@@ -1,4 +1,4 @@
-import type { LogoAsset } from "@/lib/types";
+import type { LogoAsset } from "@/src/types";
 
 export function LogoDisplay({ logos }: { logos: LogoAsset[] }) {
   if (logos.length === 0) return null;

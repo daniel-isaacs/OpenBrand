@@ -1,4 +1,4 @@
-import type { BackdropAsset } from "@/lib/types";
+import type { BackdropAsset } from "@/src/types";
 
 export function BackdropGallery({ backdrops }: { backdrops: BackdropAsset[] }) {
   if (backdrops.length === 0) return null;

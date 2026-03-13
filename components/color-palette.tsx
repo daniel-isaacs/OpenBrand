@@ -1,6 +1,6 @@
 "use client";
 
-import type { ColorAsset } from "@/lib/types";
+import type { ColorAsset } from "@/src/types";
 import { useState } from "react";
 
 export function ColorPalette({ colors }: { colors: ColorAsset[] }) {

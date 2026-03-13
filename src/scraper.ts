@@ -149,6 +149,16 @@ async function extractLogos(
 
     if (!combined.includes("logo")) return;
 
+    // Skip images served through CDN image transformation pipelines
+    // (these are content/marketing images, not brand logos)
+    const CDN_IMAGE_PARAMS = ["w", "h", "q", "fit", "fm", "crop", "auto"];
+    try {
+      const params = new URL(resolveUrl(src, baseUrl) || "").searchParams;
+      if (CDN_IMAGE_PARAMS.some((p) => params.has(p))) return;
+    } catch {
+      // invalid URL, let it through for other filters to handle
+    }
+
     // Accept if: inside header/nav, or filename contains the site's domain name
     const isInHeader = $(el).closest("header, nav, [role='banner']").length > 0;
     const isInFooter = $(el).closest("footer").length > 0;
