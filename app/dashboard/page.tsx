@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { ApiKeyManager } from "@/components/api-key-manager";
+import { SignOutButton } from "@/components/sign-out-button";
 
 export default async function DashboardPage() {
   const supabase = await createClient();
@@ -31,13 +32,18 @@ export default async function DashboardPage() {
             <p className="text-neutral-500">Manage your API keys</p>
           </div>
           <div className="flex items-center gap-4 text-sm">
-            <span className="text-neutral-500">{user.email}</span>
             <a
-              href="/"
-              className="text-neutral-400 hover:text-neutral-900 transition-colors font-medium"
+              href="https://github.com/ethanjyx/openbrand"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Extract
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                alt="GitHub stars"
+                src="https://img.shields.io/github/stars/ethanjyx/openbrand?style=social"
+              />
             </a>
+            <SignOutButton />
           </div>
         </div>
         <ApiKeyManager />

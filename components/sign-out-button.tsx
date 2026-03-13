@@ -9,16 +9,16 @@ export function SignOutButton() {
 
   const handleSignOut = async () => {
     await supabase.auth.signOut();
-    router.push("/login");
+    router.push("/");
     router.refresh();
   };
 
   return (
     <button
       onClick={handleSignOut}
-      className="text-neutral-400 hover:text-neutral-900 transition-colors font-medium"
+      className="px-3 py-1.5 rounded-lg border border-neutral-300 text-neutral-700 hover:bg-neutral-100 transition-colors font-medium"
     >
-      Sign Out
+      Logout
     </button>
   );
 }
