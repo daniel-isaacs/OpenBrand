@@ -13,6 +13,10 @@
 
 Extract brand assets (logos, colors, backdrops, brand name) from any website URL.
 
+## API Key
+
+Get your free API key from [openbrand.sh/dashboard](https://openbrand.sh/dashboard). Required for the MCP server.
+
 ## As an [npm package](https://www.npmjs.com/package/openbrand)
 
 ```bash
