@@ -1,5 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
-import { createClient as createServiceClient } from "@supabase/supabase-js";
+import { createServiceClient } from "@/lib/supabase/service";
 
 export async function getAuthenticatedUserId(
   request: Request
@@ -27,10 +27,7 @@ async function validateApiKey(key: string): Promise<string | null> {
     .map((b) => b.toString(16).padStart(2, "0"))
     .join("");
 
-  const supabase = createServiceClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-  );
+  const supabase = createServiceClient();
 
   const { data: apiKey } = await supabase
     .from("api_keys")
