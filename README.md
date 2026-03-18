@@ -47,6 +47,16 @@ res = requests.get(
 brand = res.json()
 ```
 
+## As an [agent skill](https://skills.sh/ethanjyx/openbrand/openbrand)
+
+Add OpenBrand to Claude Code, Cursor, Codex, Gemini CLI, and [40+ other agents](https://skills.sh):
+
+```bash
+npx skills add ethanjyx/openbrand
+```
+
+Once installed, your agent automatically knows how to extract brand assets — just ask it to "extract brand assets from stripe.com".
+
 ## As an [npm package](https://www.npmjs.com/package/openbrand)
 
 No API key required. Runs as a library from your server-side code.
@@ -105,16 +115,6 @@ Or add to `.claude/settings.json`:
 ```
 
 Then ask Claude to "extract brand assets from stripe.com" and it will use the `extract_brand_assets` tool automatically.
-
-## As an [agent skill](https://skills.sh/ethanjyx/openbrand/openbrand)
-
-Add OpenBrand to Claude Code, Cursor, Codex, Gemini CLI, and [40+ other agents](https://skills.sh):
-
-```bash
-npx skills add ethanjyx/openbrand
-```
-
-Once installed, your agent automatically knows how to extract brand assets — just ask it to "extract brand assets from stripe.com".
 
 ## Self-hosting the web app
 

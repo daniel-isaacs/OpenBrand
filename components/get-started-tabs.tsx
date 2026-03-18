@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const tabs = ["With API Key", "Self Hosting", "MCP"] as const;
+const tabs = ["With API Key", "Agent Skill", "Self Hosting", "MCP"] as const;
 type Tab = (typeof tabs)[number];
 
 export function GetStartedTabs({ isLoggedIn = false }: { isLoggedIn?: boolean }) {
@@ -32,6 +32,8 @@ export function GetStartedTabs({ isLoggedIn = false }: { isLoggedIn?: boolean })
 
       {active === "With API Key" ? (
         <ApiKeyContent isLoggedIn={isLoggedIn} />
+      ) : active === "Agent Skill" ? (
+        <AgentSkillContent />
       ) : active === "MCP" ? (
         <MCPContent isLoggedIn={isLoggedIn} />
       ) : (
@@ -50,6 +52,21 @@ function ApiKeyContent({ isLoggedIn }: { isLoggedIn: boolean }) {
       >
         {isLoggedIn ? "Manage API keys" : "Login to get API key"}
       </a>
+    </div>
+  );
+}
+
+function AgentSkillContent() {
+  return (
+    <div>
+      <p className="text-neutral-500 mb-3 text-sm">
+        Add OpenBrand to Claude Code, Cursor, Codex, Gemini CLI, and{" "}
+        <a href="https://skills.sh" className="underline hover:text-neutral-700">40+ other agents</a>:
+      </p>
+      <pre className="p-4 rounded-xl bg-neutral-900 text-neutral-100 text-sm overflow-x-auto font-mono leading-relaxed mb-4">{`npx skills add ethanjyx/openbrand`}</pre>
+      <p className="text-neutral-400 text-sm">
+        Once installed, your agent automatically knows how to extract brand assets — just ask it to &ldquo;extract brand assets from stripe.com&rdquo;.
+      </p>
     </div>
   );
 }
